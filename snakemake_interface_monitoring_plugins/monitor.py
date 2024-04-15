@@ -15,6 +15,10 @@ class MonitorBase(ABC):
         self, settings: Optional[MonitoringProviderSettingsBase] = None
     ) -> None:
         self.settings = settings
+        self.__post_init__()
+
+    def __post_init__(self):  # noqa B027
+        pass
 
     @abstractmethod
     def log_handler(self, msg: dict) -> None:
