@@ -15,10 +15,9 @@ from snakemake_interface_common.plugin_registry.plugin import PluginBase
 
 @dataclass
 class Plugin(PluginBase):
-    monitoring_proivder: object
+    monitoring_provider: object
     _monitoring_settings_cls: Optional[Type[MonitoringProviderSettingsBase]]
     _name: str
-
     @property
     def name(self):
         return self._name
