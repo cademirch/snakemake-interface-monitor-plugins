@@ -10,7 +10,7 @@ from snakemake_interface_monitoring_plugins.settings import (
 )
 
 
-class MonitorBase(ABC):
+class MonitoringProviderBase(ABC):
     def __init__(
         self, settings: Optional[MonitoringProviderSettingsBase] = None
     ) -> None:
