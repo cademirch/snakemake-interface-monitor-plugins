@@ -1162,7 +1162,7 @@ files = [
 
 [[package]]
 name = "snakemake"
-version = "8.10.7"
+version = "8.10.7+1.gfc9971b2"
 description = "Workflow management system to create reproducible and scalable data analyses"
 optional = false
 python-versions = ">=3.11"
@@ -1173,7 +1173,7 @@ develop = false
 appdirs = "*"
 conda-inject = ">=1.3.1,<2.0"
 configargparse = "*"
-connection-pool = ">=0.0.3"
+connection_pool = ">=0.0.3"
 datrie = "*"
 docutils = "*"
 dpath = ">=2.1.6,<3.0.0"
@@ -1202,7 +1202,7 @@ wrapt = "*"
 yte = ">=1.5.1,<2.0"
 
 [package.extras]
-messaging = ["slack-sdk"]
+messaging = ["slack_sdk"]
 pep = ["eido", "peppy"]
 reports = ["pygments"]
 
@@ -1210,7 +1210,7 @@ reports = ["pygments"]
 type = "git"
 url = "https://github.com/snakemake/snakemake.git"
 reference = "HEAD"
-resolved_reference = "6abd8269d3d35eb00e5dba37cb053856951d54cc"
+resolved_reference = "fc9971b227e43601c8b511c1c37e4dce3211e913"
 
 [[package]]
 name = "snakemake-interface-common"
@@ -1259,13 +1259,13 @@ snakemake-interface-common = ">=1.16.0,<2.0.0"
 
 [[package]]
 name = "snakemake-interface-storage-plugins"
-version = "3.2.0"
+version = "3.2.1"
 description = "This package provides a stable interface for interactions between Snakemake and its storage plugins."
 optional = false
 python-versions = "<4.0,>=3.11"
 files = [
-    {file = "snakemake_interface_storage_plugins-3.2.0-py3-none-any.whl", hash = "sha256:01ef02121c3e648a98e9d861ec24385f4db0ee095a19c0171512119a4d6330c9"},
-    {file = "snakemake_interface_storage_plugins-3.2.0.tar.gz", hash = "sha256:84f9a48d8a413f3d301a645379b79c2aeb1f453016389b140043ba046e37c4f8"},
+    {file = "snakemake_interface_storage_plugins-3.2.1-py3-none-any.whl", hash = "sha256:6758576f499e9eeab66f03f28a28064f05446f85b3a33b31ce59232c70ca6129"},
+    {file = "snakemake_interface_storage_plugins-3.2.1.tar.gz", hash = "sha256:e25b3a6ee0f0ac45d7bb8b076e57c01f0a47f8168c3b5ab45e2facc7907387d5"},
 ]
 
 [package.dependencies]
@@ -1452,5 +1452,5 @@ pyyaml = ">=6.0,<7.0"
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.12"
-content-hash = "5e7ce93631d96ab96de18d25f8cde05db81bd704172bbee69f997fdd4fc504f4"
+python-versions = "^3.11"
+content-hash = "d14ba311519024f1a182cbedd7f0d788f12892a9749f51a9e81d45f5def76046"
