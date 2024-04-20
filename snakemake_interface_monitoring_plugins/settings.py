@@ -18,7 +18,13 @@ class MonitoringProviderSettingsBase(
     Storage plugins can define a subclass of this class,
     named 'MonitoringSettings'.
     """
-
+    metadata: Optional[dict] = field(
+        default=None,
+        metadata={
+            "help": "Metadata to pass to monitoring provider",
+            "env_var": False,
+        },
+    )
     token: Optional[str] = field(
         default=None,
         metadata={
