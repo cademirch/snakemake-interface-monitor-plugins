@@ -29,15 +29,15 @@ class MonitorPluginRegistry(PluginRegistryBase):
 
     @property
     def module_prefix(self) -> str:
-        return common.monitoring_plugin_module_prefix
+        return common.monitor_plugin_module_prefix
 
     def load_plugin(self, name: str, module: types.ModuleType) -> Plugin:
         """Load a plugin by name."""
 
         return Plugin(
             _name=name,
-            monitoring_provider=module.MonitorProvider,
-            _monitoring_settings_cls=getattr(module, "MonitorroviderSettings", None),
+            monitor_provider=module.MonitorProvider,
+            _monitor_settings_cls=getattr(module, "MonitorProviderSettings", None),
         )
 
     def expected_attributes(self) -> Mapping[str, AttributeType]:

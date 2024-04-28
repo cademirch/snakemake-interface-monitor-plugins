@@ -17,8 +17,8 @@ from snakemake_interface_common.plugin_registry.plugin import PluginBase
 
 @dataclass
 class Plugin(PluginBase):
-    monitoring_provider: object
-    _monitoring_settings_cls: Optional[Type[MonitorProviderSettingsBase]]
+    monitor_provider: object
+    _monitor_settings_cls: Optional[Type[MonitorProviderSettingsBase]]
     _name: str
 
     @property
@@ -27,10 +27,8 @@ class Plugin(PluginBase):
 
     @property
     def cli_prefix(self):
-        return "monitoring-" + self.name.replace(
-            common.monitoring_plugin_module_prefix, ""
-        )
+        return "monitor-" + self.name.replace(common.monitor_plugin_module_prefix, "")
 
     @property
     def settings_cls(self):
-        return self._monitoring_settings_cls
+        return self._monitor_settings_cls
