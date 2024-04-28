@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "snakemake-interface-monitoring-plugins"
+name = "snakemake-interface-monitor-plugins"
 version = "0.1.0"
 description = ""
 authors = ["Cade Mirchandani <cmirchan@ucsc.edu>"]

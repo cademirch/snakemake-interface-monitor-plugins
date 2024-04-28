@@ -1,28 +1,30 @@
-__author__ = "Christopher Tomkins-Tinch, Johannes Köster"
-__copyright__ = "Copyright 2023, Christopher Tomkins-Tinch, Johannes Köster"
+__author__ = "Cade Mirchandani, Christopher Tomkins-Tinch, Johannes Köster"
+__copyright__ = (
+    "Copyright 2023, Cade Mirchandani, Christopher Tomkins-Tinch, Johannes Köster"
+)
 __email__ = "johannes.koester@uni-due.de"
 __license__ = "MIT"
 
 import types
 from typing import List, Mapping
 
-from snakemake_interface_monitoring_plugins.settings import (
-    MonitoringProviderSettingsBase,
+from snakemake_interface_monitor_plugins.settings import (
+    MonitorProviderSettingsBase,
 )
 from snakemake_interface_common.plugin_registry.attribute_types import (
     AttributeKind,
     AttributeMode,
     AttributeType,
 )
-from snakemake_interface_monitoring_plugins.registry.plugin import Plugin
+from snakemake_interface_monitor_plugins.registry.plugin import Plugin
 from snakemake_interface_common.plugin_registry import PluginRegistryBase
-from snakemake_interface_monitoring_plugins import common
-from snakemake_interface_monitoring_plugins.monitoring_provider import (
-    MonitoringProviderBase,
+from snakemake_interface_monitor_plugins import common
+from snakemake_interface_monitor_plugins.monitor_provider import (
+    MonitorProviderBase,
 )
 
 
-class MonitoringPluginRegistry(PluginRegistryBase):
+class MonitorPluginRegistry(PluginRegistryBase):
     """This class is a singleton that holds all registered executor plugins."""
 
     @property
@@ -34,21 +36,19 @@ class MonitoringPluginRegistry(PluginRegistryBase):
 
         return Plugin(
             _name=name,
-            monitoring_provider=module.MonitoringProvider,
-            _monitoring_settings_cls=getattr(
-                module, "MonitoringProviderSettings", None
-            ),
+            monitoring_provider=module.MonitorProvider,
+            _monitoring_settings_cls=getattr(module, "MonitorroviderSettings", None),
         )
 
     def expected_attributes(self) -> Mapping[str, AttributeType]:
         return {
-            "MonitoringSettings": AttributeType(
-                cls=MonitoringProviderSettingsBase,
+            "MonitorSettings": AttributeType(
+                cls=MonitorProviderSettingsBase,
                 mode=AttributeMode.OPTIONAL,
                 kind=AttributeKind.CLASS,
             ),
-            "MonitoringProvider": AttributeType(
-                cls=MonitoringProviderBase,
+            "MonitorProvider": AttributeType(
+                cls=MonitorProviderBase,
                 mode=AttributeMode.REQUIRED,
                 kind=AttributeKind.CLASS,
             ),

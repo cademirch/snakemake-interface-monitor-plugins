@@ -1,5 +1,7 @@
-__author__ = "Christopher Tomkins-Tinch, Johannes Köster"
-__copyright__ = "Copyright 2023, Christopher Tomkins-Tinch, Johannes Köster"
+__author__ = "Cade Mirchandani, Christopher Tomkins-Tinch, Johannes Köster"
+__copyright__ = (
+    "Copyright 2023, Cade Mirchandani, Christopher Tomkins-Tinch, Johannes Köster"
+)
 __email__ = "johannes.koester@uni-due.de"
 __license__ = "MIT"
 
@@ -10,25 +12,26 @@ import snakemake_interface_common.plugin_registry.plugin
 
 
 @dataclass
-class MonitoringProviderSettingsBase(
+class MonitorProviderSettingsBase(
     snakemake_interface_common.plugin_registry.plugin.SettingsBase
 ):
-    """Base class for Monitoring plugin settings.
+    """Base class for Monitor plugin settings.
 
     Storage plugins can define a subclass of this class,
-    named 'MonitoringSettings'.
+    named 'MonitorSettings'.
     """
+
     metadata: Optional[dict] = field(
         default=None,
         metadata={
-            "help": "Metadata to pass to monitoring provider",
+            "help": "Metadata to pass to monitor provider",
             "env_var": False,
         },
     )
     token: Optional[str] = field(
         default=None,
         metadata={
-            "help": "Auth token for monitoring plugin.",
+            "help": "Auth token for monitor plugin.",
             "env_var": True,
         },
     )
